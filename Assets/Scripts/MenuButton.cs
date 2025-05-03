@@ -6,12 +6,6 @@ using UnityEngine.UI;
 
 public class MenuButton : MonoBehaviour
 {
-   
-
-    public void StartGame()
-    {
-        SceneManager.LoadScene("main");
-    }
 
     public void BackToMenu()
     {

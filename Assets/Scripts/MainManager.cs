@@ -65,12 +65,24 @@ public class MainManager : MonoBehaviour
     void AddPoint(int point)
     {
         m_Points += point;
-        ScoreText.text = $"Score : {m_Points}";
+        ScoreText.text = $"{PlayerData.playerName} Score : {m_Points}";
     }
 
     public void GameOver()
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
-    }
+
+        int highScore = PlayerPrefs.GetInt("HighScore", 0);
+        string highScorePlayer = PlayerPrefs.GetString("HighScoreName", "Unknown Player");
+
+        if (m_Points > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", m_Points);
+            PlayerPrefs.SetString("HighScoreName", PlayerData.playerName);
+            PlayerPrefs.Save();
+        }
+     }
 }
+
+
