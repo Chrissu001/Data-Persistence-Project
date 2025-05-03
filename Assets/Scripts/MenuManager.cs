@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public InputField nameInput;
-
+   
     public void StartGame()
     {
         PlayerData.playerName = nameInput.text; // Save the name
