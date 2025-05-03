@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MenuButton : MonoBehaviour
+public class MenuButton : MonoBehaviour //This is an example of Inheritance
 {
 
     public void BackToMenu()

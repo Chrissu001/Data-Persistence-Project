@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathZone : MonoBehaviour
+public class DeathZone : MonoBehaviour //This is an example of inheritance
 {
     public MainManager Manager;
 

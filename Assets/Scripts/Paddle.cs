@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Paddle : MonoBehaviour
+public class Paddle : MonoBehaviour // This is an example of inheritance
 {
     public float Speed = 2.0f;
     public float MaxMovement = 2.0f;

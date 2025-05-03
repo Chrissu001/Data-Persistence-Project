@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainManager : MonoBehaviour
+public class MainManager : MonoBehaviour //This is an example of inheritance
 {
     public Brick BrickPrefab;
     public int LineCount = 6;
@@ -13,6 +13,7 @@ public class MainManager : MonoBehaviour
     public Text ScoreText;
     public GameObject GameOverText;
 
+    [SerializeField] //Could be an example of Encapsulation
     private bool m_Started = false;
     private int m_Points;
     private bool m_GameOver = false;
@@ -20,14 +21,14 @@ public class MainManager : MonoBehaviour
 
     void Start()
     {
-        GenerateBricks(); // Initialize bricks at the start
+        GenerateBricks(); // Initialize bricks at the start. This is also an example of Abstraction.
     }
 
     private void Update()
     {
         if (!m_Started)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space)) //Could be an example of Polymorphism
             {
                 m_Started = true;
                 float randomDirection = Random.Range(-1.0f, 1.0f);
@@ -38,7 +39,7 @@ public class MainManager : MonoBehaviour
                 Ball.AddForce(forceDir * 2.0f, ForceMode.VelocityChange);
             }
         }
-        else if (m_GameOver)
+        else if (m_GameOver) //Could be an example of Polymorphism
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -66,7 +67,7 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    void GenerateBricks()
+    void GenerateBricks() //This is an example of Abstraction
     {
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
